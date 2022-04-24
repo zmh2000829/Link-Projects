@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>国庆知识问答</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div id="content">
+		<div id = "Home">
+			<div id="back">
+				<img src="img/index.png" style="width:100%">
+			</div>
+      <div id = "name">
+        <input id="nameText" type="text" style="text-align: center;font-size:40px;width:200px; height:60px;background:none;" />
+      </div>
+			<div id="butt">
+        		<img onclick="next()" src="img/butt.png" style="width:100%">
+      </div>
+      <div id="txt">
+        <p>特别鸣谢：复旦大学校史研究室、复旦大学校史协会、<br>复旦大学“星火”党员志愿服务队&nbsp&nbsp&nbsp&nbsp&nbsp技术支持：凌客工坊
+        </p>
+      </div>
+		</div>
+		
+	</div>
+</body>
+ <script type="text/javascript">
+    function onload(){
+      var sen = "Home";  
+      var width = document.documentElement.clientWidth;
+      var height = document.documentElement.clientHeight;
+      var ratio = width / height;
+      if (ratio > (9 / 16)) {
+        var bodywidth = height * 9 / 16;
+        var margin = (width - bodywidth) / 2;
+        document.getElementById(sen).style.height= height + 'px';
+        document.getElementById(sen).style.width= bodywidth + 'px';
+        document.getElementById(sen).style.marginLeft= margin + 'px';
+        document.getElementById(sen).style.marginRight= margin + 'px';
+      }else if(ratio < (9 / 16)){
+        var bodyheight = width * 16 / 9;
+        var margin = (height - bodyheight) / 2;
+        document.getElementById(sen).style.height = bodyheight + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = margin + 'px';
+        document.getElementById(sen).style.marginBottom = margin + 'px';
+      }else{
+        document.getElementById(sen).style.height = height + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = 0 + 'px';
+        document.getElementById(sen).style.marginBottom = 0 + 'px';
+      }
+    }
+  onload();
+
+  function next(){
+    var name = document.getElementById("nameText");
+    var score = 0;
+    var index = Math.floor(Math.random()*4)+1;
+    console.log(index)
+    console.log(name.value)
+    if(name.value == ''){
+        alert("请输入姓名");
+      }
+    else{
+      window.sessionStorage["index"] = index;
+      window.sessionStorage["score"] = score;
+      window.sessionStorage["name"] = name.value;
+      window.location.href = "a1.html";
+    }  
+  }
+  </script>
+</html>

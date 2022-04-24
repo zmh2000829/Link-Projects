@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>国庆知识问答</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+  <div id="content">
+    <div id = "Home">
+      <div id="back">
+        <img id = "background"src="img/5/5_1.png" style="width:100%">
+      </div>
+      <div id = "b1">
+        <img id ="b11" src="img/block.png" style="display: none;">
+      </div>
+      <div id = "b2">
+        <img id ="b22" src="img/block.png" style="display: none;">
+      </div>
+      <div id = "b3">
+        <img id ="b33" src="img/block.png" style="display: none;">
+      </div>
+      <div id = "a">
+        <img id ="1" src="img/icon/1_2.png">
+      </div>
+      <div id="butta">
+        <img id = "a" onclick="next(1)" src="img/btn.png" style="width:100%">
+      </div>
+      <div id = "b">
+        <img id ="2" src="img/icon/2_2.png">
+      </div>
+      <div id="buttb">
+        <img id = "b" onclick="next(2)" src="img/btn.png" style="width:100%">
+      </div>
+      <div id = "c">
+        <img id ="3" src="img/icon/3_2.png">
+      </div>
+      <div id="buttc">
+        <img id = "c" onclick="next(3)" src="img/btn.png" style="width:100%">
+      </div>
+      <div id="next">
+        <img  onclick="go()" src="img/icon/next.png" style="width:100%">
+      </div>
+    </div>
+    
+  </div>
+</body>
+ <script type="text/javascript">
+    function onload(){
+      var sen = "Home";  
+      var width = document.documentElement.clientWidth;
+      var height = document.documentElement.clientHeight;
+      var ratio = width / height;
+      if (ratio > (9 / 16)) {
+        var bodywidth = height * 9 / 16;
+        var margin = (width - bodywidth) / 2;
+        document.getElementById(sen).style.height= height + 'px';
+        document.getElementById(sen).style.width= bodywidth + 'px';
+        document.getElementById(sen).style.marginLeft= margin + 'px';
+        document.getElementById(sen).style.marginRight= margin + 'px';
+      }else if(ratio < (9 / 16)){
+        var bodyheight = width * 16 / 9;
+        var margin = (height - bodyheight) / 2;
+        document.getElementById(sen).style.height = bodyheight + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = margin + 'px';
+        document.getElementById(sen).style.marginBottom = margin + 'px';
+      }else{
+        document.getElementById(sen).style.height = height + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = 0 + 'px';
+        document.getElementById(sen).style.marginBottom = 0 + 'px';
+      }
+    }
+  onload();
+  getdata();
+  function getdata(){
+    index = Math.floor(Math.random()*7)+1;
+    document.getElementById('background').src ="img/5/5_"+index.toString()+'.png'
+  }
+  function next(chose){
+    if(chose == 1){
+      document.getElementById('1').style.display =  'none';
+      document.getElementById('2').style.display =  'inline';
+      document.getElementById('3').style.display =  'inline';
+      document.getElementById('b11').style.display =  'inline';
+      document.getElementById('b22').style.display =  'none';
+      document.getElementById('b33').style.display =  'none';
+    }else if(chose == 2){
+      document.getElementById('2').style.display =  'none';
+      document.getElementById('1').style.display =  'inline';
+      document.getElementById('3').style.display =  'inline';
+      document.getElementById('b11').style.display =  'none';
+      document.getElementById('b22').style.display =  'inline';
+      document.getElementById('b33').style.display =  'none';
+    }else{
+      document.getElementById('3').style.display =  'none';
+      document.getElementById('2').style.display =  'inline';
+      document.getElementById('1').style.display =  'inline';
+      document.getElementById('b11').style.display =  'none';
+      document.getElementById('b22').style.display =  'none';
+      document.getElementById('b33').style.display =  'inline';
+    }  
+    window.sessionStorage["chose"] = chose;  
+  }
+  function go(){
+    var choose = window.sessionStorage.getItem('chose');
+    var point = window.sessionStorage.getItem('score');
+    var score = parseInt(point);
+    chose = parseInt(choose);
+    console.log(chose);
+    //baccaba
+    if((index == 1||index == 6 )&& chose==2){
+      score += 20;
+    }else if((index == 2||index == 7||index == 5)&& chose==1){
+      score += 20;
+    }else if((index == 3||index == 4)&& chose==3){
+      score += 20;
+    }else{
+      score += 0;
+    } 
+    window.sessionStorage["score"] = score;
+    window.location.href = "score.php";
+  }
+
+  </script>
+</html>
