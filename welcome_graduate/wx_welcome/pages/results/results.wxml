@@ -1,0 +1,35 @@
+<view class="page">
+  <!--标题-->
+  <image src="../../image/0.jpg" class="image"></image>
+  <view class='page-head'>
+    <view class="page-title">
+      答题结束！您本次得分为:
+    </view>
+    <!--分数-->
+    <view class='page-score'>
+      <text class="score-num">{{score}}</text>
+      <text class="score-text">分</text>
+    </view>
+  </view>
+
+  <view class="score">
+    <view class="mini-title">个人总成绩</view>
+    <view class="score_detail">
+      <view>刷题广场 X{{score_1}}</view>
+      <view>竞速赛道 X{{score_2}}</view>
+    </view>
+  </view>
+  <!--查询错误-->
+  <view class='page-footer'>
+    
+    <view class="btns">
+      <image bindtap="toRank" src='../../image/4-1.jpg' class="next-btn"></image>
+    </view>
+    <view class="wrong-btns">
+      <button type="default" bindtap="toView" hover-class="other-button-hover" class="wrong-btn" wx:if="{{wrongList.length > 0}}"> 查看错题 </button>
+      <button type="default" bindtap="toIndex" hover-class="other-button-hover" class="wrong-btn"> 返回首页 </button>
+    </view>
+  </view>
+  <wrong-modal modalShow="{{modalShow}}" wrongList="{{wrongList}}" wrongListSort="{{wrongListSort}}" chooseValue="{{chooseValue}}" questionList="{{questionList}}" testId="{{testId}}"
+    ></wrong-modal>
+</view>

@@ -1,0 +1,65 @@
+.btns{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  z-index: 99;
+}
+.btn1{
+  height: 80rpx;
+  width: 230rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:14%;
+}
+.btn2{
+  height: 215rpx;
+  width: 500rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:24%;
+}
+.btn3{
+  height: 80rpx;
+  width: 230rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:47%;
+}
+.btn4{
+  height: 255rpx;
+  width: 500rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:58%;
+}
+.btn{
+  height: 80rpx;
+  width: 230rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:83%;
+}
+.ranking{
+  width:100%;
+  height:100%;
+  padding: 20rpx;
+  border-radius:8rpx;
+  align-items:center;
+  justify-content: center;  
+}
+.img{
+  position: relative;
+  width: 150rpx;
+  height: 200rpx;
+}
+.image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}

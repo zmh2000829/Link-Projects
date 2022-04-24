@@ -1,0 +1,76 @@
+/* pages/results/results.wxss */
+.page {
+  padding: 0rpx;
+  color: #695857; 
+}
+.image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.page-head {
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.page-title {
+
+}
+.page-score {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top:40rpx;
+  padding-bottom:40rpx;
+}
+.score-num {
+  font-size:100rpx;
+}
+.page-footer {
+  position: absolute;
+  width: 80%;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top:60rpx;
+  text-align: center;
+}
+.wrong-btns {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top: 40rpx;
+}
+.wrong-btn {
+  margin-left:20rpx;
+  margin-right:20rpx;
+  height:70rpx;
+  line-height:70rpx;
+  font-size:14px;
+}
+.btns {
+  margin-top: 40rpx;
+}
+.mini-title{
+  font-size: 24px;
+}
+.next-btn {
+  height: 52rpx;
+  width: 350rpx;
+  position: relative;
+}
+.score{
+  position: absolute;
+  top: 44%;
+  align-items: center;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.score_detail{
+  margin-top: 20rpx;
+
+}

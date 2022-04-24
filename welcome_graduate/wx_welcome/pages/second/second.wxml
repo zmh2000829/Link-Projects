@@ -1,0 +1,10 @@
+<view class="page">
+<image src='../../image/left.png' class="left"></image>
+<image src='../../image/right.png' class="right"></image>
+<image src='../../image/a2.png' class="image"></image>
+<view class="txt">
+	<image src='../../image/txt.png' class="text"></image>
+	<image src='../../image/in.png' class="btn" bindtap="tohomePage"></image>
+</view>
+
+</view>

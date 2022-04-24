@@ -1,0 +1,103 @@
+.modal-mask {
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:10;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  color: white;
+}
+.image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.modal-page {
+  margin-top: 20rpx;
+  color: #695857;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:100%;
+  top:0;
+  position:absolute;
+  left:0;
+}
+.image2{
+  position: absolute;
+  width: 80%;
+  min-height: 80%;
+  z-index: 0;
+}
+.modal-content {
+  width: 80%;
+  min-height: 80%;
+  background-color: rgba(255,255,2255,0.3);
+  border-radius: 8rpx;
+  z-index:11;
+  color: white;
+  border:0px solid;
+  border-radius:15px;
+  padding: 15rpx;
+}
+.margin{
+  position: relative;
+  border:0px solid;
+  padding: 25rpx;
+  border-radius:15px;
+}
+.modal-title {
+color: #695857;
+  position: relative;
+  font-size: 14px;
+      margin: 25rpx;
+    margin-top: 50rpx;
+  z-index: 5;
+}
+.modal-body {
+color: #695857;
+  position: relative;
+  padding: 20rpx;
+  z-index: 5;
+}
+.my-choosebox {
+  display: block;
+  margin-bottom: 20rpx;
+  font-size: 14px;
+  z-index: 5;
+}
+.modal-answer {
+margin: 25rpx;
+color: #695857;
+  display: flex;
+  z-index: 5;
+}
+.answer-text {
+  font-size: 14px;
+  margin-right: 20rpx;
+  z-index: 5;
+}
+.modal-button {
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:60rpx;
+}
+.modal-btns {
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+.modal-btn {
+  margin-left:20rpx;
+  margin-right:20rpx;
+  height:70rpx;
+  line-height:70rpx;
+  font-size:12px;
+  color: black;
+}

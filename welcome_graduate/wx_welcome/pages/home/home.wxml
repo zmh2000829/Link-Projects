@@ -1,0 +1,25 @@
+<view class="page">
+<image src='../../image/0.jpg' class="image"></image>
+
+    <view bindtap="toTestPage" data-testId="Part_1" class="btns">
+      <image src='../../image/2-1.jpg' class="btn1"></image>
+    </view>
+
+    <view class="btns">
+      <image src='../../image/2-2.jpg' class="btn2"></image>
+    </view>
+
+    <view bindtap="toTestPage2" data-testId="Part_2" class="btns">
+      <image src='../../image/2-3.jpg' class="btn3"></image>
+    </view>
+
+    <view class="btns">
+      <image src='../../image/2-4.jpg' class="btn4"></image>
+    </view>
+
+    <view class="items">
+      <view class="ranking" bindtap="torankpage">
+        <image src='../../image/2-5.jpg' class="btn"></image>
+      </view>  
+  </view>
+</view>
