@@ -1,0 +1,21 @@
+<view class="page">
+<image src='../../image/left.png' class="left"></image>
+<image src='../../image/right.png' class="right"></image>
+<image src='../../image/a1.jpg' class="image"></image>
+<image src='../../image/title.png' class="title"></image>
+<image src='../../image/sun.png' class="sun"></image>
+  <view class="content">
+  	<image src='../../image/inputt.png' class="id"></image>
+	<view class="inputView1">
+		<input class="input" type="text" placeholder="请输入学工号" placeholder-style="color: white" bindinput="listenerstuidInput" />
+	</view>
+	<image src='../../image/inputt.png' class="name"></image>
+	<view class="inputView2">
+		<input class="input" placeholder="请输入姓名" placeholder-style="color: white" bindinput="listenernameInput"/>
+	</view>
+	<image src='../../image/inputt.png' class="btn" bindtap="submit"></image>
+	<view class="inputView3">
+		<input class="input" placeholder="开始答题" bindtap="submit" disabled="true" placeholder-style="color: white" bindinput="listenernameInput"/>
+	</view>
+  </view>
+</view>

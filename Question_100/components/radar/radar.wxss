@@ -1,0 +1,20 @@
+.radar {
+    text-align: center;
+}
+.radar canvas {
+	position: absolute;
+	top: 22.5%;
+	left: 50%;
+	transform: translateX(-50%);
+    width: 500rpx;
+    height: 400rpx;
+    background-color: rgba(111,185,222,0);
+}
+.text{
+	font-family: "微软雅黑";
+	position: absolute;
+	top: 53.9%;
+	left: 53%;
+	z-index: 99;
+	color:white;
+}

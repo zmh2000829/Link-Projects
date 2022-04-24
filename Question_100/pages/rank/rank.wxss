@@ -1,0 +1,74 @@
+@import "../../components/radar/radar.wxss"
+.image{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+.an{
+  position: absolute;
+  width: 300rpx;
+  height: 60rpx;
+  left: 16%;
+  top: 54.3%;
+  z-index: 99;  
+  color: white;
+  font-size: 18px;
+  text-align: center;  
+}
+.button{
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translateX(-50%);	
+}
+.t{
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);  
+}
+.title{
+  position: absolute;
+  width: 300rpx;
+  height: 110rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 60%;
+  z-index: 99;  
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+.rt{
+  position: relative;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+  width: 400rpx;
+  height: 170rpx;
+}
+.btn{
+  position: absolute;
+  width: 250rpx;
+  height: 75rpx;
+  top:40%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.left{
+  position: absolute;
+  width: 160rpx;
+  height: 130rpx;
+  left: 1%;
+  top: 2%;
+  z-index: 99;
+}
+.right{
+  position: absolute;
+  width: 100rpx;
+  height: 110rpx;
+  left: 83%;
+  top: 2.3%;
+  z-index: 99;
+}

@@ -1,0 +1,96 @@
+.left{
+  position: absolute;
+  width: 160rpx;
+  height: 130rpx;
+  left: 1%;
+  top: 2%;
+  z-index: 99;
+}
+.right{
+  position: absolute;
+  width: 100rpx;
+  height: 110rpx;
+  left: 83%;
+  top: 2.3%;
+  z-index: 99;
+}
+.pp{
+  font-size: 14px;
+}
+.flex {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 13%;
+  display: flex;
+  align-items:center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30rpx;
+  box-sizing:border-box;
+  z-index: 99;
+}
+.count{
+  width:100%;
+  height:60%;
+  text-align: center;
+  padding-top: 60rpx;
+  padding-left: 2rpx;
+  padding-right: 2rpx;
+  border-radius:8rpx;
+  align-items:center;
+  justify-content: center;
+  color:white;
+  font-size: 18px;
+  line-height: 10px;
+}
+.ranking{
+  width:100%;
+  height:100%;
+  padding: 20rpx;
+  border-radius:8rpx;
+  align-items:center;
+  justify-content: center;  
+}
+.frame{
+  position: absolute;
+  width: 90%;
+  height: 90%
+}
+.img{
+  position: relative;
+  width: 150rpx;
+  height: 200rpx;
+}
+.image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.btn1{
+  position: absolute;
+  width: 360rpx;
+  height: 157rpx;
+  top:40%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn2{
+  position: absolute;
+  width: 400rpx;
+  height: 90rpx;
+  top:54%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn3{
+  position: absolute;
+  width: 400rpx;
+  height: 90rpx;
+  top:66.5%;
+  left: 50%;
+  transform: translateX(-50%);
+}

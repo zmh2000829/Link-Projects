@@ -1,0 +1,22 @@
+<import src="../../components/radar/radar.wxml"/>
+<view class="page">
+<image src='../../image/left.png' class="left"></image>
+<image src='../../image/right.png' class="right"></image>
+<image src='../../image/rank.png' class="image"></image>
+<view class="t">
+	<image src='../../image/rt.png' class="rt"></image>
+	<view class="title">
+	      <view><b>成 绩 报 告 单</b></view>
+	</view>
+</view>
+<view class="an">
+      <view><b>积分最终得分</b></view>
+</view>
+<template is="radar"  data="{{radarData: radarData}}"/>
+    <view class="text">
+      <view><b>{{score_total}} ({{ranking}}/{{nums}})</b></view>
+    </view>
+    <view class="button" bindtap="tohomePage">
+        <image src='../../image/back.png' class="btn" ></image>
+    </view>  
+</view>

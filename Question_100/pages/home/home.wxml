@@ -1,0 +1,37 @@
+<view class="page">
+<image src='../../image/left.png' class="left"></image>
+<image src='../../image/right.png' class="right"></image>
+<image src='../../image/a3.png' class="image"></image>
+  <view class="flex">
+      <view bindtap="toTestPage" data-testId="Part_1">
+        <image src='../../image/b1.png' class="img"></image>
+      </view>
+      <view bindtap="toTestPage" data-testId="Part_2">
+        <image src='../../image/b2.png' class="img"></image>
+      </view>
+      <view bindtap="toTestPage" data-testId="Part_3">
+        <image src='../../image/b3.png' class="img"></image>
+      </view>
+      <view bindtap="toTestPage" data-testId="Part_4">
+        <image src='../../image/b4.png' class="img"></image>
+      </view>
+    <view class="count">
+      <text>
+        请从以上四个板块中任选一个开始答题！\n
+      </text>
+      <text class="pp">
+        进入答题页面，点击“下一题”后不可更改！
+      </text>
+    </view>
+    <view class="items">
+      <view class="ranking" bindtap="check2">
+        <image src='../../image/check2.png' class="btn2"></image>
+      </view> 
+      <view class="ranking" bindtap="torankpage">
+        <image src='../../image/check3.png' class="btn3"></image>
+      </view>    
+    </view>
+
+  </view>
+  
+</view>
