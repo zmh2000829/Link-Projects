@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>定制你的2020：复旦专属头像来袭！</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <script type="text/javascript" src="./html2canvas.min.js"></script>
+  <script type="text/javascript" src="./jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/index4.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/public.css"> -->
+</head>
+<body>
+  <!-- <div class="loading">
+    <div class="pic">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+</div> -->
+  <div id="content">
+      <div id = "Home">
+          <div id="back">
+            <img src="img/4backg.jpg" style="width:100%">
+          </div>
+            <div class="square" style="position: absolute;width: 65%;left: 17.5%;top: 28%;">
+            <img src="img/square.png" style="width: 100%;opacity: 0;display: block;">
+            <div id = "icon" class="icon" align="center" style="text-align:center">
+            <div id = "oo" style="display: flex;z-index: -1">
+              <img src="" id="headimg" />
+            </div>
+            <div style="z-index: -1">
+              <img id = "icon_" src="" style="width:100%;display: block;">
+            </div>        
+          </div>
+            </div>
+          <!-- <div id="hide" class="hide"> -->
+            <img id ="hide" src="" style="opacity: 0.0;z-index: 6">
+          <!-- </div> -->
+          <div id="butt">
+            <img onclick="back()" src="img/4butt.png" style="width:100%">
+          </div>
+      </div>
+  </div>
+</body>
+<!-- <script>
+    document.onreadystatechange = function(){
+        if(document.readyState == "complete"){
+            $(".loading").fadeOut(3000);
+        }
+    }
+</script> -->
+<!-- <SCRIPT>  
+var a=navigator.appName;  
+var b=navigator.appVersion;  
+var c=navigator.appCodeName;  
+var d=navigator.userAgent;
+alert(d);  
+var e=5;
+</SCRIPT>  -->
+<script>
+window.onload = function(){
+         var url=document.location.href;  //获取浏览器访问栏里的地址
+        if( url.indexOf("r=")==-1 ){    //判断地址后面是否多了某些值，没有就进方法里进行刷新
+         if (confirm("头像已生成！")) {
+    var t = new Date();
+    window.location.href = url+"?r="+t.getTime();   
+  } else {
+    var t = new Date();
+    window.location.href = url+"?r="+t.getTime(); 
+  }
+        }
+  
+    } 
+</script>  
+<script type="text/javascript">
+  window.onpageshow = function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+};
+
+</script>
+ <script type="text/javascript">
+    function onload(){
+      var sen = "Home";  
+      var width = document.documentElement.clientWidth;
+      var height = document.documentElement.clientHeight;
+      var ratio = width / height;
+      if (ratio > (1 / 2)) {
+        var bodywidth = height * 1 / 2;
+        var margin = (width - bodywidth) / 2;
+        document.getElementById(sen).style.height= height + 'px';
+        document.getElementById(sen).style.width= bodywidth + 'px';
+        document.getElementById(sen).style.marginLeft= margin + 'px';
+        document.getElementById(sen).style.marginRight= margin + 'px';
+      }else if(ratio < (1 / 2)){
+        var bodyheight = width * 2 / 1;
+        var margin = (height - bodyheight) / 2;
+        document.getElementById(sen).style.height = bodyheight + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = margin + 'px';
+        document.getElementById(sen).style.marginBottom = margin + 'px';
+      }else{
+        document.getElementById(sen).style.height = height + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = 0 + 'px';
+        document.getElementById(sen).style.marginBottom = 0 + 'px';
+      }
+    }
+  onload();
+  function getdata(){
+    var num = window.sessionStorage.getItem('num');
+    var imgsrc = window.sessionStorage.getItem('src');
+    var finalsrc = window.sessionStorage.getItem('finalsrc');
+    document.getElementById('hide').src = finalsrc;
+    document.getElementById("icon_").src="img/"+num.toString()+'.png';
+    document.getElementById('headimg').src = imgsrc;
+    var ratio = 0.78;
+      if(num == 1){
+        document.getElementById("oo").style.left = 14+"%";
+      }
+      if(num == 2){
+        document.getElementById("oo").style.left = 11+"%";
+      }
+      if(num == 3){
+        document.getElementById("oo").style.left = 9+"%";
+        document.getElementById("oo").style.top = 7+"%";
+        document.getElementById("icon").style.left = 2+"%";
+        // document.getElementById("icon").style.top = 29.5+"%";
+        var ratio = 0.85;
+      }
+      if(num == 4){
+        document.getElementById("oo").style.left = 8+"%";
+        document.getElementById("icon").style.left = 6+"%";
+        document.getElementById("icon").style.top = 8+"%";
+      }    
+      if(num == 5){
+        document.getElementById("oo").style.left = 15+"%";
+        document.getElementById("oo").style.top = 20+"%";
+        document.getElementById("icon").style.left = 5+"%";
+        // document.getElementById("icon").style.top = 29.5+"%";
+        var ratio = 0.65; 
+      }
+      if(num == 6){
+        document.getElementById("oo").style.left = 12+"%";
+        document.getElementById("oo").style.top = 20+"%";
+        document.getElementById("icon").style.left = 6+"%";
+        document.getElementById("icon").style.top = 2+"%";
+        document.getElementById("icon").style.width = 84.6+"%";
+        // var ratio = 
+      }
+      if(num == 7){
+        document.getElementById("icon").style.left = 2+"%";
+        document.getElementById("icon").style.top = 5+"%";
+      }
+      if(num == 8){
+        document.getElementById("oo").style.left = 13+"%";
+        document.getElementById("oo").style.top = 7+"%";
+        document.getElementById("icon").style.top = 2+"%";
+      }
+      if(num == 9){
+        document.getElementById("icon").style.left = 4+"%";
+        document.getElementById("icon").style.top = 2+"%";
+      }
+      return ratio;
+  }
+  var ratio = getdata();
+    var w = document.getElementById("icon").offsetWidth*ratio;
+    document.getElementById("oo").style.width = w  + 'px';
+    document.getElementById("oo").style.height = w + 'px';
+    // refresh();
+  function back(){
+    sessionStorage.clear();
+    window.location.href = "index2.html";
+  }
+//   function refresh(){
+//        var url=document.location.href;  //获取浏览器访问栏里的地址
+//         if( url.indexOf("r=")==-1 ){    //判断地址后面是否多了某些值，没有就进方法里进行刷新
+//          var t = new Date();
+//             window.location.href = url+"?r="+t.getTime();     
+//         }
+//     } 
+  </script>
+</html>

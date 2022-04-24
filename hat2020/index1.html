@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>定制你的2020：复旦专属头像来袭！</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+	<link rel="stylesheet" type="text/css" href="css/index1.css">
+</head>
+<body>
+	<div id="content">
+		<div id = "Home">
+			<div id="back">
+				<img src="img/1-.png" style="width:100%">
+			</div>
+			<div id ="word">
+				<img src="img/1word.png" style="width:100%">
+			</div>
+			<div id="butt">
+        		<img onclick="next()" src="img/1butt.png" alt="666" style="width:100%">
+      		</div>
+		</div>
+		
+	</div>
+</body>
+ <script type="text/javascript">
+    function onload(){
+      var sen = "Home";  
+      var width = document.documentElement.clientWidth;
+      var height = document.documentElement.clientHeight;
+      var ratio = width / height;
+      if (ratio > (1 / 2)) {
+        var bodywidth = height * 1 / 2;
+        var margin = (width - bodywidth) / 2;
+        document.getElementById(sen).style.height= height + 'px';
+        document.getElementById(sen).style.width= bodywidth + 'px';
+        document.getElementById(sen).style.marginLeft= margin + 'px';
+        document.getElementById(sen).style.marginRight= margin + 'px';
+      }else if(ratio < (1 / 2)){
+        var bodyheight = width * 2 / 1;
+        var margin = (height - bodyheight) / 2;
+        document.getElementById(sen).style.height = bodyheight + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = margin + 'px';
+        document.getElementById(sen).style.marginBottom = margin + 'px';
+      }else{
+        document.getElementById(sen).style.height = height + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = 0 + 'px';
+        document.getElementById(sen).style.marginBottom = 0 + 'px';
+      }
+    }
+  onload();
+  function next(){
+    window.location.href = "index2.html";
+  }
+  </script>
+<script type="text/javascript">
+document.write(unescape("%3Cspan id='cnzz_stat_icon_1279248664'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1279248664%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+document.getElementById("cnzz_stat_icon_1279248664").style.display = "none";
+</script>
+</html>

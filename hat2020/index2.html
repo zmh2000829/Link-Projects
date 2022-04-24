@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>定制你的2020：复旦专属头像来袭！</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+	<link rel="stylesheet" type="text/css" href="css/index2.css">
+</head>
+<body>
+	<div id="content">
+   <div id="Home">  
+      <div id="back">
+        <img src="img/2backg.jpg" style="width:100%">
+      </div> 
+     <div id ="icon1">
+       <img onclick="next('1')" src="img/1.png" style="width:100%">
+     </div>
+     <div id ="icon2">
+       <img onclick="next('2')" src="img/2.png" style="width:100%">
+     </div>
+     <div id ="icon3">
+       <img onclick="next('3')" src="img/3.png" style="width:100%">
+     </div>
+     <div id ="icon4">
+       <img onclick="next('4')" src="img/4.png" style="width:100%">
+     </div>
+     <div id ="icon5">
+       <img onclick="next('5')" src="img/5.png" style="width:100%">
+     </div>
+     <div id ="icon6">
+       <img onclick="next('6')" src="img/6.png" style="width:100%">
+     </div>
+     <div id ="icon7">
+       <img onclick="next('7')" src="img/7.png" style="width:100%">
+     </div>
+     <div id ="icon8">
+       <img onclick="next('8')" src="img/8.png" style="width:100%">
+     </div>
+     <div id ="icon9">
+       <img onclick="next('9')" src="img/9.png" style="width:100%">
+     </div>
+   </div> 
+  </div>
+</body>
+ <script type="text/javascript">
+    function onload(){
+      var sen = "Home";  
+      var width = document.documentElement.clientWidth;
+      var height = document.documentElement.clientHeight;
+      console.log(width);
+      console.log(height);
+      var ratio = width / height;
+      if (ratio > (1/2)) {
+        var bodywidth = height * 1/2;
+        var margin = (width - bodywidth) / 2;
+        document.getElementById(sen).style.height= height + 'px';
+        document.getElementById(sen).style.width= bodywidth + 'px';
+        document.getElementById(sen).style.marginLeft= margin + 'px';
+        document.getElementById(sen).style.marginRight= margin + 'px';
+      }else if(ratio < (1/2)){
+        var bodyheight = width * 2/1;
+        var margin = (height - bodyheight) / 2;
+        document.getElementById(sen).style.height = bodyheight + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = margin + 'px';
+        document.getElementById(sen).style.marginBottom = margin + 'px';
+      }else{
+        document.getElementById(sen).style.height = height + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = 0 + 'px';
+        document.getElementById(sen).style.marginBottom = 0 + 'px';
+      }
+    }
+  onload();
+  function next(num){
+    window.sessionStorage["num"] = num;
+    window.location.href = "index3.html";
+    console.log(num);
+  }
+  </script>
+</html>
