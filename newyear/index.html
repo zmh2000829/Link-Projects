@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <title>新年幸运签</title>
+    <style type=text/css>
+    #Loader{
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      margin: 0;
+      position: absolute;
+      background-color:rgb(211, 211, 211);
+    }
+    #Loading {
+      top:50%;
+      left:50%;
+      position: absolute;
+      -webkit-transform: translateY(-50%) translateX(-50%);
+      transform: translateY(-50%) translateX(-50%);
+      z-index:100;
+      background-color: rgb(211, 211, 211);
+      }
+      @-webkit-keyframes ball-beat {
+      50% {
+        opacity: 0.2;
+        -webkit-transform: scale(0.75);
+        transform: scale(0.75); }
+
+      100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1); } }
+
+      @keyframes ball-beat {
+      50% {
+        opacity: 0.2;
+        -webkit-transform: scale(0.75);
+        transform: scale(0.75); }
+
+      100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1); } }
+
+      .ball-beat > div {
+      background-color: #279fcf;
+      width: 15px;
+      height: 15px;
+      border-radius: 100% !important;
+      margin: 2px;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      display: inline-block;
+      -webkit-animation: ball-beat 0.7s 0s infinite linear;
+      animation: ball-beat 0.7s 0s infinite linear; }
+      .ball-beat > div:nth-child(2n-1) {
+      -webkit-animation-delay: 0.35s !important;
+      animation-delay: 0.35s !important; 
+      }
+      .no-js #Loading {
+        display: none;
+      }
+        .no-js h1 {
+          color: #222222;
+      }
+      #wait{
+        position: absolute;
+        width: 100%;
+        font-size: 1.15em;
+        font-family: 'Open Sans';
+        color: #279fcf;
+        bottom: 30%;
+        opacity: 1;
+        text-align: center;
+        letter-spacing:0.1em;
+      }
+      #waitspan{
+        font-weight: normal;
+        font-size: 0.85em;
+        color: #279fcf;
+        opacity:0.5;
+      }
+</style>
+</head>
+   <body>
+     <div id=app>
+
+       <div id=Loader>
+         <div id="wait">正在加载，请稍等...
+           <br>
+         </div>
+         <div id=Loading>
+          <div id=dong class="loader-inner ball-beat">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      document.write(unescape("%3Cspan id='cnzz_stat_icon_1279676413'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279676413%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+      document.getElementById("cnzz_stat_icon_1279676413").style.display = "none";</script>
+  <script src=https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js></script>
+  <script src=https://cdn.jsdelivr.net/npm/vuex@3.1.1/dist/vuex.min.js></script>
+  <script src=https://cdn.jsdelivr.net/npm/vue-router@3.1.3/dist/vue-router.min.js></script>
+</body>
+</html>
