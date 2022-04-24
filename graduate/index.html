@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>毕业100</title>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> -->
+	<!-- <meta http-equiv="refresh" content="4;url=index2.html"> -->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+  <div id="content">
+    <div id="Home" >
+      <div id="color">
+        <img src="img/1.png" style="width:100%">
+      </div>   
+      <div id="background">
+        <img src="img/1-2.png" style="width:100%">
+      </div>  
+
+      <div id="btn" >
+        <img onclick="next()" src="img/click.png" alt="666" style="width:100%">
+      </div>
+
+    </div>
+  </div>
+</body>
+
+ <script type="text/javascript">
+    function onload(){
+      var sen = "Home";  
+      var width = document.documentElement.clientWidth;
+      var height = document.documentElement.clientHeight;
+      var ratio = width / height;
+      if (ratio > (9 / 16)) {
+        var bodywidth = height * 9 / 16;
+        var margin = (width - bodywidth) / 2;
+        document.getElementById(sen).style.height= height + 'px';
+        document.getElementById(sen).style.width= bodywidth + 'px';
+        document.getElementById(sen).style.marginLeft= margin + 'px';
+        document.getElementById(sen).style.marginRight= margin + 'px';
+      }else if(ratio < (9 / 16)){
+        var bodyheight = width * 16 / 9;
+        var margin = (height - bodyheight) / 2;
+        document.getElementById(sen).style.height = bodyheight + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = margin + 'px';
+        document.getElementById(sen).style.marginBottom = margin + 'px';
+      }else{
+        document.getElementById(sen).style.height = height + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = 0 + 'px';
+        document.getElementById(sen).style.marginBottom = 0 + 'px';
+      }
+    }
+  onload(); 
+  function next(){
+    window.location.href = "index2.html";
+
+  function draw(){
+      const canva = document.getElementById("canvas");
+const ctx = canva.getContext("2d");
+
+ctx.moveTo(0,0);
+ctx.lineTo(200,100);
+ctx.stroke();
+  }
+  draw();
+}
+</script>
+<script type="text/javascript">
+
+</script>
+</html>

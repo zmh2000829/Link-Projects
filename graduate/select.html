@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>毕业100-2</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/index2.css">
+</head>
+<body>
+  <div id="content">
+    <div id="Home">   
+      <div id="txtimg">
+        <img src="img/click2.png" style="width:100%">
+      </div> 
+      <div id='canvasdiv' style="width: 100%; height:100%" >
+        <canvas id="canvas" style="position: absolute;" ></canvas>
+      </div>
+      <div id="btn" >
+        <img onclick="select()" src="img/over.png" alt="666" style="width:100%">
+      </div>
+      <img id="img" src="./img/100/01.png" style="display:none">
+    </div>
+  </div>
+</body>
+
+ <script type="text/javascript">
+    function onload(){
+      var sen = "Home";  
+      var width = document.documentElement.clientWidth;
+      var height = document.documentElement.clientHeight;
+      var ratio = width / height;
+      if(Math.abs(ratio-9/16)<0.001){
+        document.getElementById(sen).style.height = height + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = 0 + 'px';
+        document.getElementById(sen).style.marginBottom = 0 + 'px';
+         document.getElementById('canvas').style.left = "5%"
+        }
+      else if (ratio > (9 / 16)) {
+        var bodywidth = height * 9 / 16;
+        var margin = (width - bodywidth) / 2;
+        document.getElementById(sen).style.height= height + 'px';
+        document.getElementById(sen).style.width= bodywidth + 'px';
+        document.getElementById(sen).style.marginLeft= margin + 'px';
+        document.getElementById(sen).style.marginRight= margin + 'px';
+      // document.getElementById('canvas').style.left = str((document.documentElement.clientWidth - width)/2 + 0.5*width)
+      document.getElementById('canvas').style.left = ""
+      }else if(ratio < (9 / 16)){
+        var bodyheight = width * 16 / 9;
+        var margin = (height - bodyheight) / 2;
+        document.getElementById(sen).style.height = bodyheight + 'px';
+        document.getElementById(sen).style.width = width + 'px';
+        document.getElementById(sen).style.marginTop = margin + 'px';
+        document.getElementById(sen).style.marginBottom = margin + 'px';
+        document.getElementById('canvas').style.left = "5%"
+      }
+      
+    }
+    onload();
+
+
+</script>
+ <script type="text/javascript">
+var width = document.documentElement.clientWidth;
+var height = document.documentElement.clientHeight;
+
+ratio = width / height;
+
+if(Math.abs(ratio-9/16)<0.001){
+   width *=0.9
+   console.log(1)
+}
+else if (ratio>9/16){
+  width = height * 9 / 16;
+  console.log(2)
+}
+else if(ratio < (9 / 16)){
+  height = width * 16 / 9;
+  width *=0.9
+  console.log(3)
+}
+
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+canvas.setAttribute('width',width)
+canvas.setAttribute('height',height)
+// canvas.style.left = str((document.documentElement.clientWidth - width/0.9)/2 + 0.05*width/0.9)
+// ctx.fillStyle = "red";
+ctx.font = "40px sans-serif";
+ctx.textAlign = "left";
+ctx.textBaseline="top"; 
+var textUpY = 0.27*height;
+var textDownY = 0.75*height;
+var textLeftX = 0;
+var textRightX = width;
+var interval = width/4;
+// var total_width = textlist.length * interval;
+var textlist = [];
+var selected = [];
+
+function select(){
+    if(selected.length > 0){ 
+      window.sessionStorage['number'] = selected;  
+      window.sessionStorage["num"] = selected.length;
+      window.location.href = "index3.html";
+    }
+    else{
+      alert('还没有选择事件qaq')
+    }
+}
+
+items = ['光华楼顶楼看一次日落', '参加一次校庆日升旗仪式', '打卡四个校区的图书馆', '吃遍四个校区的食堂', '作为“导游”带朋友逛一次复旦校园', '和挚友坐在光阶畅聊人生', '拿一次期末全A', '拥有一件复旦周边', '去复旦游泳馆游一次泳', '微信通讯录超过1000人', '拿一次国家奖学金', '毕业前和室友旅行一次', '做一次公众演讲', '加入一个社团', '毕业前旁听一门跨专业的课', '和所有班级同学拍过照', '在江湾大草原遇见过小动物', '跨校区上过一学期的课', '在实验室通宵做过一次实验', '周末开过组会', '做过一次实习', '发过一篇paper', '装扮过一次宿舍', '和喜欢的人在光草晒太阳', '在三教通宵赶ddl', '和爸妈一起在复旦拍过照', '参加一次支教活动', '通过实习或者兼职的钱买了一件种草很久的东西', '打卡其他友校', '买猫粮喂过复旦喵喵', '在阿康和朋友喝酒撸串', '去相辉堂看一次演出', '细细品味过光华楼前的石楠花', '上过一次早八的课', '和朋友拍过一次毕业写真', '在复旦某次活动上表演过节目', '献一次血', '参加过一次志愿活动', '和“复旦研究生”一直互相陪伴到毕业', '在上海著名景点拍过游客照', '打卡完上海所有的地铁线路', '和导师单独合过一次影', '参加过一次师门聚会', '参加过一次校运动会', '参加过一次复旦乐跑活动', '做过一次助管/助教', '学习一门第二外语', '去图书馆借阅过30本书', '在复旦丢过一次伞', '被光华楼的风吹坏过伞', '连续一周打卡图书馆', '负责过一次校内媒体的推送', '打卡复旦周边的奶茶店', '在复旦食堂被人借过校园卡', '带朋友吃过复旦食堂', '在一次转发抽奖活动中成为幸运儿', '在复旦校园某个角落里偷偷哭过', '参加过一次以复旦为起点的定向徒步', '坐过复旦周边的公交', '参加一次联谊活动', '在讲座上主动举手提问一次', '与复旦的樱花合影', '打卡大学路的10家以上美食店', '在亚青参加过一次讨论会', '在青书馆买过书', '丢过一次校园卡', '曾经从图书馆开门待到闭馆', '在复旦卖过二手闲置物品', '向喜欢的人主动表白过', '和喜欢的人上过同一门课', '给室友带过一次饭', '在校园内夜跑', '在复旦超市一次性消费50元以上', '在大学自学了一门乐器', '在宿舍养过植物', '和朋友一起过生日', '为身边同学的绝美爱情流泪点赞', '在海某捞享受过一次学生优惠', '和室友开过一次深夜卧谈会', '参加过一次班会', '发红包祈求亲朋好友帮填问卷', '坐一次复旦校车', '和复旦校门合过一次影', '看过一次复旦的雪景', '去洗澡脱完衣服发现忘带卡', '吃过复旦点心部的双皮奶', '调侃过复旦交大扑朔迷离的关系', '吃过食堂的青团月饼', '给外卖小哥解释李达三楼', '在图书馆学到忘我，渐入梦境', '在校区里骑过共享单车', '连续一周只吃复旦食堂', '和同学一起组队参加过竞赛', '给学妹学弟解答过一次疑惑', '用复旦的落叶做过手账', '在食堂打饭刷卡结果卡里没有钱', '问学霸/学长借过笔记', '期末期间靠转发求好运', '见过光华楼的正门打开', '课上点了外卖结果外卖先到了']
+
+for(i=0;i<100;i++)
+{
+  textlist.push({s:items[i], x:0, y:0});
+  textlist[i].width = ctx.measureText(textlist[i].s).width;
+  textlist[i].height = 50;
+  textlist[i].ispic = false;
+  textlist[i].picture = new Image();
+  if(i+1<10){
+    textlist[i].picture.src = "img/100/0"+(i+1).toString()+'.png';
+  }
+  else{
+    textlist[i].picture.src = "img/100/"+(i+1).toString()+'.png';
+  }
+  
+}
+
+var totalWidth = (textlist.length/5) * interval;
+var imageSize = 90/980*document.documentElement.clientWidth
+console.log(document.documentElement.clientWidth, document.documentElement.clientHeight)
+
+var Hnum = 5
+while(Hnum*200>height*0.7){
+  Hnum = Hnum -1;
+}
+setPosition()
+
+function setPosition(){
+
+  var leftX = textLeftX;
+  var currentX = leftX;
+  var currentY = textUpY;
+  var padding = 50
+  var i = 0;
+
+  // 每一排的最后一个可放位置
+  var lastX = [leftX+50, leftX+200, leftX, leftX+90, leftX+20]
+  // for(m=0;m<Hnum;m++)
+  // {
+  //   lastX.push(leftX);
+  // }
+
+  while(i<textlist.length){
+    var currentW = ctx.measureText(textlist[i].s).width;
+    if(i==0||i%Hnum!=0){
+      textlist[i].x = lastX[i%Hnum];
+      textlist[i].y = currentY;
+      
+      currentY = currentY  + 200;
+      lastX[i%Hnum] += (currentW+interval)
+
+    }
+    else{
+      // currentY += ctx.measureText(textlist[i]).height;
+      var currentW = ctx.measureText(textlist[i].s).width;
+      currentY = textUpY;
+      currentX += interval;//+padding;
+      textlist[i].x = lastX[i%Hnum];
+      textlist[i].y = currentY;
+
+      // currentX = currentX  + interval;
+      currentY = currentY  + 200;
+      lastX[i%Hnum] += (currentW+interval)
+    }
+    i+=1;
+
+  }
+  textlist[97].x = lastX[1] 
+  textlist[97].y = textUpY + 200
+  lastX[1] += ctx.measureText(textlist[97].s).width;
+  totalWidth = Math.max.apply(Math, lastX)
+  console.log(totalWidth)
+}
+
+function draw(k){
+
+  // var leftX = (textLeftX + k);
+  // var padding = 50
+  var i = 0;
+  while(i<textlist.length){
+    var currentW = ctx.measureText(textlist[i].s).width;
+      // textlist[i].x = currentX;
+      // textlist[i].y = currentY;
+      currentX = textlist[i].x + k;
+      currentY = textlist[i].y;
+      if(textlist[i].ispic){
+        middleX = currentX+currentW/2
+        middleY = currentY+10
+        img = textlist[i].picture
+        ctx.drawImage(img,middleX-imageSize,middleY-imageSize,imageSize*2,imageSize*2);
+      }
+      else{
+        ctx.fillText(textlist[i].s, currentX, currentY);
+      }
+
+    i+=1;
+
+  }
+
+}
+
+// function draw(k){
+
+//   var leftX = (textLeftX + k);
+//   var currentX = leftX;
+//   var currentY = textUpY;
+//   var padding = 50
+//   var i = 0;
+//   while(i<textlist.length){
+//     var currentW = ctx.measureText(textlist[i].s).width;
+//     if(i==0||i%Hnum!=0){
+//       textlist[i].x = currentX;
+//       textlist[i].y = currentY;
+//       if(textlist[i].ispic){
+//         middleX = currentX+currentW/2
+//         middleY = currentY+10
+//         img = textlist[i].picture
+//         ctx.drawImage(img,middleX-imageSize,middleY-imageSize,imageSize*2,imageSize*2);
+//       }
+//       else{
+//         ctx.fillText(textlist[i].s, currentX, currentY);
+//       }
+      
+//       currentY = currentY  + 200;
+
+//     }
+//     else{
+//       // currentY += ctx.measureText(textlist[i]).height;
+//       currentY = textUpY;
+//       currentX += interval;//+padding;
+//       textlist[i].x = currentX;
+//       textlist[i].y = currentY;
+//       if(textlist[i].ispic){
+//         middleX = currentX+currentW/2
+//         middleY = currentY+10
+//         img = textlist[i].picture
+//         ctx.drawImage(img,middleX-90,middleY-90,180,180);
+//       }
+//       else{
+//         ctx.fillText(textlist[i].s, currentX, currentY);
+//       }
+//       // currentX = currentX  + interval;
+//       currentY = currentY  + 200;
+//     }
+//     i+=1;
+
+//   }
+
+// }
+
+var img = document.getElementById("img");
+function showPic(x,y)
+{
+  console.log('aaaa')
+  for(i=0;i<textlist.length;i++){
+
+    o_x = textlist[i].x
+    o_y = textlist[i].y
+    o_w = textlist[i].width
+    o_h = textlist[i].height
+    middleX = o_x+o_w/2
+    middleY = o_y+10
+    console.log('Onclick!!!')
+    if((o_x<x)&&(x<o_x+o_w)&&(y>o_y)&&(y<o_y+o_h)){
+      textlist[i].ispic = true
+      // ctx.drawImage(img,middleX-50/2,middleY-50/2,50,50);
+      selected.push(i)
+      update()
+      console.log(i,"text:",o_x,o_y,o_w,o_h,"mouse:",x,y)
+    }
+  }
+}
+// ctx.fillText("光华楼",100,textUpY+100);
+// ctx.fillText("You jump! I jump!",50,100);
+// ctx.fillText("rose~jack",50,200);
+var speed=0.1;
+
+
+function update(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  draw(speed)
+}
+// update()
+
+    var x=0,y=0;
+    var started = false;
+    var move = false;
+    //添加鼠标按下事件
+    canvas.ontouchstart=function (event) {
+        // x_start= e.clientX; y_start=e.clientY;
+        // console.log('Down!!!',event.touches);
+      x = event.touches[0].clientX;
+      y = event.touches[0].clientY;
+      // y = event.y;
+      // var canvas = event.target;
+      // var loc = getPointOnCanvas(canvas, x, y);
+      started = true;
+        //按下后可移动
+        console.log('Down!!!',x);
+    };
+      canvas.ontouchmove = function(event){
+      // x= e.clientX; y=e.clientY;
+
+      if (started)
+      {
+      speed -= (x-event.touches[0].clientX);
+      x = event.touches[0].clientX;
+      move = true;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      draw(speed)
+      }
+      console.log(speed);
+  };
+
+      canvas.ontouchend = function(event){
+        if(started){
+          // console.log(event.touches)
+
+          if(!move){
+            // showPic(x, y)
+          }
+        }
+          started = false
+          move = false
+          console.log('Up!!!');
+      };
+
+canvas.addEventListener('click', function(e){
+  console.log(e)
+    showPic(e.clientX-(document.documentElement.clientWidth-width)/2-speed, e.offsetY);
+}, false);
+
+    (function drawFrame(){
+         window.requestAnimationFrame(drawFrame, canvas);
+          update()
+                
+         // if(speed > 100) speed = 0;
+         if(-speed > totalWidth) {speed = width;}
+         speed -= 2;
+         
+    }());
+
+</script>
+</html>

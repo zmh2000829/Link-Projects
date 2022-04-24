@@ -1,0 +1,129 @@
+#content{
+	position: absolute;
+	background: url("../img/2-1.png") no-repeat center;
+    background-size:100% 100%;
+    height: 100%;
+    width:100%;
+}
+#txtimg{
+    position: absolute;
+    width: 62%;
+    left: 18%;
+    top: 5%;
+    z-index: 1;
+}
+#background{
+    position: absolute;
+    width: 61%;
+    height:61%;
+    right: 0%;
+    left:18%;
+    top:8%;
+    z-index: 1;
+ }
+ #name{
+ 	position: absolute;
+    width: 9.5%;
+    right: 0%;
+    left:45%;
+    top:23%;
+    z-index: 3;
+ }
+ #nameText{
+    width: 280%;
+    position: absolute;
+    left: -90%;
+    top: 105%;
+    height:140%;
+    z-index: 2;
+    font-size:1.9em;
+    background-color: #e8ecd5;
+    border:none;
+    text-align: center;
+  }
+ #major{
+    position: absolute;
+    width: 9.5%;
+    right: 0%;
+    left:44.5%;
+    top:32%;
+    z-index: 1;
+ }
+ #majorText{
+    width: 280%;
+    position: absolute;
+    left: -83%;
+    top: 105%;
+    height:140%;
+    z-index: 2;
+    font-size:1.9em;
+    background-color: #e8ecd5;
+    border:none;
+    text-align: center;
+  }
+ #love_building{
+    position: absolute;
+    width: 40%;
+    height:40%;
+    right: 0%;
+    left:30%;
+    top:41%;
+    z-index: 1;
+ }
+ #buildingText{
+    width: 81%;
+    position: absolute;
+    left: 10.5%;
+    top: 8%;
+    height:10%;
+    z-index: 2;
+    font-size:1.8em;
+    background-color: #e8ecd5;
+    border:none;
+    text-align: center;
+  }
+ #love_food{
+    position: absolute;
+    width: 40%;
+    height:40%;
+    right: 0%;
+    left:30%;
+    top:50%;
+    z-index: 1;
+ }
+ #foodText{
+    width: 81%;
+    position: absolute;
+    left: 10.5%;
+    top: 8%;
+    height:10%;
+    z-index: 2;
+    font-size:1.8em;
+    background-color: #e8ecd5;
+    border:none;
+    text-align: center;
+  }
+ #load{
+    position: absolute;
+    width: 18%;
+    right: 0%;
+    left:40%;
+    top:59%;
+    z-index: 1;
+ }
+ #square{
+    position: absolute;
+    width: 28%;
+    right: 0%;
+    left:35%;
+    top:63.5%;
+    z-index: 1;
+ }
+ #btn{
+    position: absolute;
+    width: 40%;
+ 
+    left: 29.5%;
+    top: 88.5%;
+    z-index: 5;
+  }

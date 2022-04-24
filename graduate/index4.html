@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>毕业100</title>
+  <meta charset="utf-8">
+  <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+  <script type="text/javascript" src="./html2canvas.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/index4.css">
+  <style>
+    .textarea{
+      width: 100%;
+      resize:none;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <div id="Home">   
+      <div id="headimgdiv">
+        <img id='headimg' src="img/4-1.png" >
+      </div>
+      <div id="name">
+        <img src="img/4-1.png" style="width:100%">
+      </div>
+      <div id="name_txt">
+        <textarea class="textarea" rows="1" id="name_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
+      </div>
+      <div id="major">
+        <img src="img/4-2.png" style="width:100%">
+      </div>
+      <div id="major_txt">
+        <textarea class="textarea" rows="1" id="major_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
+      </div>
+      <div id="love_building">
+        <img src="img/4-3.png" style="width:100%">
+      </div>
+      <div id="building_txt">
+        <textarea rows="1" class="textarea" id="building_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
+      </div>
+      <div id="love_food">
+        <img src="img/4-4.png" style="width:100%">
+      </div>
+      <div id="food_txt">
+        <textarea rows="1" class="textarea" id="food_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
+      </div>     
+      <div id="koudai">
+        <img src="img/4-5.png" style="width:100%">
+      </div>
+      <div id="num">
+        <textarea rows="1" class="textarea" id="num_text" readonly="readonly" style="font-size: 99px;background:transparent;border-style:none;"></textarea>
+      </div>
+      <div id="things">
+        <img src="img/4-6.png" style="width:100%">
+      </div>
+      <div id="code">
+        <img src="img/code.png" style="width:100%">
+      </div>
+      <div id="sodoi">
+        <img src="img/4-7.png" style="width:100%">
+      </div>
+      <div id="square" style="display: none">
+        <img id="squareimg" src="img/4-9.png" style="width:100%">
+      </div>
+      <div id="graduation">
+        <img src="img/4-10.png" style="width:100%">
+      </div>
+    </div>
+  </div>
+    <div id='canvasdiv'>
+        <canvas id="canvas" style="position: absolute;width:100%;left:0%;" ></canvas>
+    </div>
+</body>
+
+ <script type="text/javascript">
+    function onload(){
+    var sen = "Home";  
+    var width = document.documentElement.clientWidth;
+    var height = document.documentElement.clientHeight;
+    var ratio = width / height;
+    if (ratio > (9 / 16)) {
+      var bodywidth = height * 9 / 16;
+      var margin = (width - bodywidth) / 2;
+      document.getElementById(sen).style.height= height + 'px';
+      document.getElementById(sen).style.width= bodywidth + 'px';
+      document.getElementById(sen).style.marginLeft= margin + 'px';
+      document.getElementById(sen).style.marginRight= margin + 'px';
+    }else if(ratio < (9 / 16)){
+      var bodyheight = width * 16 / 9;
+      var margin = (height - bodyheight) / 2;
+      document.getElementById(sen).style.height = bodyheight + 'px';
+      document.getElementById(sen).style.width = width + 'px';
+      document.getElementById(sen).style.marginTop = margin + 'px';
+      document.getElementById(sen).style.marginBottom = margin + 'px';
+    }else{
+      document.getElementById(sen).style.height = height + 'px';
+      document.getElementById(sen).style.width = width + 'px';
+      document.getElementById(sen).style.marginTop = 0 + 'px';
+      document.getElementById(sen).style.marginBottom = 0 + 'px';
+    }
+  }
+  onload(); 
+  getdata();
+
+  function getdata(){
+
+      var name = window.sessionStorage.getItem('name');
+      var major = window.sessionStorage.getItem('major');
+      var building = window.sessionStorage.getItem('build');
+      var food = window.sessionStorage.getItem('food');
+      var num = window.sessionStorage.getItem('num');
+      var headimgsrc = window.sessionStorage.getItem('imgsrc');
+      // console.log(headimgsrc)
+      document.all.name_text.innerHTML = name;
+      document.all.major_text.innerHTML = major;
+      document.all.building_text.innerHTML = building;
+      document.all.food_text.innerHTML = food;
+      document.all.num_text.innerHTML = num;
+      document.getElementById('headimg').src = headimgsrc
+  }
+  // function adj(){
+  //   var h = document.getElementById('headimgdiv').offsetHeight;
+  //   var w = document.getElementById('headimgdiv').offsetWidth;
+  //   var imgh = document.getElementById('headimg').height;
+  //   var imgw = document.getElementById('headimg').width;
+  //   // if(imgh.value > h.value){
+  //   //   document.getElementById('headimg').style.height = h + 'px';
+  //   //   document.getElementById('headimg').style.width = h/imgh*imgw + 'px';
+  //   //   console.log(3333)
+  //   // }
+  //   // myDiv.setAttribute("style", "background-color:blue; color:red; border:1px solid black");
+  //   // if(imgh < imgw){
+  //   //   document.getElementById('headimgdiv').style.width = 21%;
+  //   // }
+  //   // else
+  //   //    document.getElementById('headimgdiv').style.height = 12%;
+  //   var h = document.getElementById('headimgdiv').offsetHeight;
+  //   var w = document.getElementById('headimgdiv').offsetWidth;
+  //   console.log(imgh+" "+imgw)
+  //   console.log(55555)
+  //   console.log(h+" "+w)
+  // }
+  function getimglist(){//string序号数组转换int并返回
+    var number = window.sessionStorage.getItem('number');
+    var list = [];
+    var arr = number.split(',');
+      for(var i = 0;i < arr.length;i++){
+          list[i] = parseInt(arr[i]);
+      }
+      return list;
+  }
+</script>
+<script type="text/javascript">
+items = ['光华楼顶楼看一次日落', '参加一次校庆日升旗仪式', '打卡四个校区的图书馆', '吃遍四个校区的食堂', '作为“导游”带朋友逛一次复旦校园', '和挚友坐在光阶畅聊人生', '拿一次期末全A', '拥有一件复旦周边', '去复旦游泳馆游一次泳', '微信通讯录超过1000人', '拿一次国家奖学金', '毕业前和室友旅行一次', '做一次公众演讲', '加入一个社团', '毕业前旁听一门跨专业的课', '和所有班级同学拍过照', '在江湾大草原遇见小动物', '跨校区上过一学期的课', '在实验室通宵做实验', '周末开过组会', '做过一次实习', '发过一篇paper', '装扮过一次宿舍', '和喜欢的人在光草晒太阳', '在三教通宵赶ddl', '和爸妈一起在复旦拍过照', '参加一次支教活动', '自己赚钱买下心爱的东西', '打卡其他友校', '买猫粮喂过复旦喵喵', '在阿康和朋友喝酒撸串', '去相辉堂看一次演出', '品味光华楼前的石楠花', '上过一次早八的课', '和朋友拍过一次毕业写真', '在复旦某次活动上表演过节目', '献一次血', '参加过一次志愿活动', '和“复旦研究生”互相陪伴到毕业', '在上海著名景点拍过游客照', '打卡上海所有的地铁线路', '和导师单独合过一次影', '参加过一次师门聚会', '参加过一次校运动会', '参加过一次复旦乐跑活动', '做过一次助管/助教', '学习一门第二外语', '去图书馆借阅过30本书', '在复旦丢过一次伞', '被光华楼的风吹坏过伞', '连续一周打卡图书馆', '负责过一次校内媒体的推送', '打卡复旦周边的奶茶店', '在复旦食堂被人借过校园卡', '带朋友吃过复旦食堂', '在转发抽奖活动中成为幸运儿', '在复旦校园角落里偷偷哭过', '参加以复旦为起点的定向徒步', '坐过复旦周边的公交', '参加一次联谊活动', '在讲座上主动举手提问过', '与复旦的樱花合影', '打卡大学路的10家以上美食店', '在亚青参加过一次讨论会', '在青书馆买过书', '丢过一次校园卡', '曾经从图书馆开门待到闭馆', '在复旦卖过二手闲置物品', '向喜欢的人主动表白过', '和喜欢的人上过同一门课', '给室友带过一次饭', '在校园内夜跑', '在复旦超市一次性消费50元以上', '在大学自学了一门乐器', '在宿舍养过植物', '和朋友一起过生日', '为好友的绝美爱情流泪点赞', '在海某捞享受过一次学生优惠', '和室友开过深夜卧谈会', '参加过一次班会', '发红包祈求亲朋好友帮填问卷', '坐一次复旦校车', '和复旦校门合过一次影', '看过一次复旦的雪景', '去洗澡脱完衣服发现忘带卡', '吃过复旦点心部的双皮奶', '调侃过复旦交大扑朔迷离的关系', '吃过食堂的青团月饼', '给外卖小哥解释李达三楼', '在图书馆学入梦境', '在校内骑过共享单车', '连续一周只吃复旦食堂', '和同学组队参加过竞赛', '给学妹学弟解答过疑惑', '用复旦的落叶做过手账', '在食堂刷卡发现余额不足', '问学霸/学长借过笔记', '期末期间靠转发求好运', '见过光华楼的正门打开', '课上点外卖结果外卖先到']
+var imgnumlist = getimglist();
+var len = imgnumlist.length;
+var he = Math.ceil(len/3);
+var width = document.getElementById('canvasdiv').clientWidth;
+var marginwidth = (1-0.76 * 0.96) * width / 2;
+var marginheight = 0.01 * document.documentElement.clientHeight;
+var backwidth = document.documentElement.clientWidth;
+
+
+var height = document.getElementById('canvasdiv').clientWidth/4*he;
+
+var can = document.getElementById('canvas');
+var canvas = can.getContext('2d');
+canvas.textAlign = "center";
+var backimg = document.getElementById("squareimg");
+can.setAttribute('width',width)
+can.setAttribute('height',height)
+canvas.drawImage(backimg, 0 ,0,backwidth,height); 
+ //int型选中的img序号数组
+var imglist = [];
+var p,q;
+canvas.font = "22px bold 黑体";
+canvas.textAlign = "center";
+canvas.textBaseline = "middle";
+
+for(var i = 0;i < imgnumlist.length; i++){
+  n = imgnumlist[i];
+  imglist.push({s:items[n], x:0, y:0});
+  imglist[i].picture = new Image();
+  if(n + 1 < 10){
+    imglist[i].picture.src = "img/100/0" + (n + 1).toString()+'.png';
+  }
+  else{
+    imglist[i].picture.src = "img/100/" + (n + 1).toString()+'.png';
+  }
+}
+for (var i = 0; i < len; i++) {
+  console.log(imglist[i].s);
+}
+var img = new Image();
+var row,j;
+img.src = "img/100/01.png";
+img.onload=function(){ //将选出的图片排版
+  if (len <= 3) {//直接一排
+    for(var i = 0;i < len ; i++){
+      canvas.drawImage(imglist[i].picture,255*i+140,0,img.width*0.19,img.height*0.19);    
+      canvas.fillText(imglist[i].s, 255*i+235,210);
+    }
+  }
+  else{// 先将能排满的行排好
+    _l = 3*Math.floor(len/3);
+    if (len%3 == 0) row = 0; //row为0没有余数不单排
+    else row = Math.ceil(len / 3) - 1;
+
+    for(var i = 0,j = 0 ;j < _l ; i+=3){
+      canvas.drawImage(imglist[j].picture, 140 ,i*80,img.width*0.19,img.height*0.19);
+      canvas.fillText(imglist[j++].s, 235,210+80*i);    
+      canvas.drawImage(imglist[j].picture,395,i*80,img.width*0.19,img.height*0.19); 
+      canvas.fillText(imglist[j++].s, 490,210+80*i);
+      canvas.drawImage(imglist[j].picture,650,i*80,img.width*0.19,img.height*0.19); 
+      canvas.fillText(imglist[j++].s, 745,210+80*i);
+    }
+    if(row > 0){
+      for(var i = 0; i < len-_l; i++){//余出来的单排
+        canvas.drawImage(imglist[j].picture,255*i+140,row*240,img.width*0.19,img.height*0.19);  
+        canvas.fillText(imglist[j++].s, 255*i+235,row*240+210);
+      }
+    }  
+  }
+}
+
+</script>
+<script>
+
+    html2canvas(document.body).then(canvas => {
+    // canvas为转换后的Canvas对象
+    let oImg = new Image();
+    oImg.src = canvas.toDataURL('img/png');  // 导出图片
+    document.body.appendChild(oImg);  // 将生成的图片添加到body
+  });
+</script>
+</html>
+  
